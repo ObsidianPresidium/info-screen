@@ -7,11 +7,24 @@
     <title>Info screen</title>
 </head>
 <body>
-
-    <a href="javascript:submit.gitPull()" class="btn btn--yellow">Update</a>
+    <main class="wallpaper">
+        <img class="wallpaper__image">
+        <img class="wallpaper__loader wallpaper__loader--do-transition">
+        <div class="clock">
+            <p class="clock__text">9:41</p>
+        </div>
+        <footer class="panel">
+            <a href="javascript:submit.gitPull()" class="btn btn--red">Update</a>
+            <a href="javascript:wallpaper.changeWallpaperNow()" class="btn btn--red">Next Wallpaper</a>
+        </footer>
+    </main>
+    
+    
     <form id="form" action="index.html" method="post">
         <input type="text" name="action" id="form__action" value="none">
     </form>
     <script src="js/submit.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/wallpaper.js"></script>
 </body>
 </html>
