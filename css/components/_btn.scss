@@ -1,4 +1,7 @@
 .btn {
+    $border-radius: 2rem;
+    $large-border-radius: 10rem;
+
     &,
     &:link,
     &:visited {
@@ -6,10 +9,10 @@
         text-decoration: none;
         padding: 2rem 4rem;
         display: inline-block;
-        border-radius: 100px;
         transition: all .2s;
         position: relative;
         font-family: "Inter", sans-serif;
+        border-radius: $border-radius;
         font-weight: 600;
         font-size: 3rem;
     }
@@ -24,15 +27,15 @@
         box-shadow: 0 5px 10px rgba(0,0,0,.2);
     }
 
-    &::after {
+    /* &::after {
         content: "";
         display: inline-block;
         height: 100%;
         width: 100%;
-        border-radius: 100px;
         position: absolute;
         top: 0;
         left: 0;
+        border-radius: $border-radius;
         z-index: -1;
         transition: all .4s;
     }
@@ -40,7 +43,7 @@
     &:hover::after {
         transform: scaleX(1.4) scaleY(1.6);
         opacity: 0; 
-    }
+    } */
 
     &--red {
         background-color: darken($dark-color-primary, 10%);
@@ -49,5 +52,33 @@
 
     &--red::after {
         background-color: $dark-color-primary;
+    }
+
+    &--large-border-radius {
+        border-radius: $large-border-radius;
+        &::after {
+            border-radius: $large-border-radius;
+        }
+    }
+
+    &--lavanda {
+        color: white;
+        background-image: linear-gradient(to right, darken($lavanda-blue, 10%), darken($lavanda-pink, 10%));
+    }
+
+    &--lavanda::after {
+        color: white;
+        background-image: linear-gradient(to right, $lavanda-blue, $lavanda-pink);
+    }
+
+    &--lavanda--pressed {
+        background-image: linear-gradient(to right, darken($lavanda-blue, 10%), darken($lavanda-pink, 50%));
+    }
+
+    &--icon {
+        color: white;
+        font-size: 5rem !important;
+        font-weight: 1000 !important;
+        padding: 1rem 1.5rem !important;
     }
 }

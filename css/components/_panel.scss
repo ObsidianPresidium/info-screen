@@ -1,18 +1,97 @@
 .panel {
+    $panel-padding: 1rem;
+    $panel-height: 9rem;
+    $panel-color: rgba($color-background, 0.4);
+    $panel-blur: blur(5px);
+    $toggle-animation-time: 100ms;
+
+    --toggle-animation-time: $toggle-animation-time;
+
     position: absolute;
-    width: 100%;
-    height: 9rem;
+    width: calc(100% - $panel-padding * 2);
+    height: $panel-height;
     left: 0;
     bottom: 0;
     padding-left: 1rem;
+    padding: 0 $panel-padding;
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
-    background-color: rgba($color-background, 0.4);
-    backdrop-filter: blur(5px);
+    background-color: $panel-color;
+    backdrop-filter: $panel-blur;
 
-    & > *:not(:first-child) {
-        margin-left: 1rem;
+    & > * > * {  // panel items
+        margin: 0.5rem;
+    }
+
+    &--hidden {
+        display: none;
+    }
+
+    &__secondary {
+        right: 0;
+        bottom: $panel-height;
+        position: absolute;
+
+        // TODO: figure out why blur does not work on animated elements
+        &--on {
+            animation: toggle-panel-on $toggle-animation-time ease-out;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        &--off {
+            animation: toggle-panel-off $toggle-animation-time ease-out;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+    }
+
+    // Individual panels
+    &__settings {
+        background-color: $panel-color;
+        backdrop-filter: $panel-blur;
+        padding: 1rem;
+        border-radius: 2rem 0 0 0;
+        width: 40%;
+        height: 75%;
+
+        h2 {
+            font-weight: 600;
+            font-size: 4rem;
+            color: white;
+        }
+
+        hr {
+            border: 2px solid white;
+            width: 90%;
+            margin: 1rem;
+        }
+    }
+}
+
+@keyframes toggle-panel-on {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes toggle-panel-off {
+    0% {
+        opacity: 1;
+        transform: none;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(10rem);
     }
 }

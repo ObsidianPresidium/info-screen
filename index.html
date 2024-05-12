@@ -14,9 +14,18 @@
             <p class="clock__text">9:41</p>
         </div>
         <footer class="panel">
-            <a href="javascript:submit.gitPull()" class="btn btn--red">Update</a>
-            <a href="javascript:wallpaper.changeWallpaperNow()" class="btn btn--red">Next Wallpaper</a>
+            <div class="leftbox">
+                <a href="javascript:wallpaper.changeWallpaperNow()" class="btn btn--red">Next Wallpaper</a>
+            </div>
+            <div class="rightbox">
+                <a href="javascript:panel.toggle(panel.panels.settings, '#button__settings')" id="button__settings" class="btn btn--lavanda btn--icon icon-basic-settings"></a>
+            </div>
         </footer>
+        <div class="panel__secondary panel--hidden panel__settings">
+            <h2>Settings</h2>
+            <hr>
+            <a href="javascript:submit.gitPull()" class="btn btn--red">Update</a>
+        </div>
     </main>
     
     
@@ -26,5 +35,7 @@
     <script src="js/submit.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/wallpaper.js"></script>
+    <script src="js/panel.js"></script>
+    <script src="js/button.js"></script>
 </body>
 </html>
