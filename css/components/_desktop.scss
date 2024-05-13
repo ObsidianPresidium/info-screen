@@ -1,0 +1,18 @@
+.desktop {
+    position: absolute;
+    width: 800px;
+    height: calc(480px - $panel-height);
+
+    &__items-container {
+        display: flex;
+        justify-content: center;
+        height: calc(480px - $panel-height - 20rem - 1rem);
+    }
+
+    &__item {
+        background-color: $panel-color;
+        backdrop-filter: $panel-blur;
+        height: 100%;
+        width: 250px;
+    }
+}

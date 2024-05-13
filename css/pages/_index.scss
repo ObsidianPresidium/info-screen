@@ -21,9 +21,3 @@ main {
 form {
     display: none;
 }
-
-.desktop {
-    position: absolute;
-    width: 800px;
-    height: calc(480px - $panel-height);
-}

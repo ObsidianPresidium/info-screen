@@ -1084,6 +1084,24 @@ html {
   text-align: center;
 }
 
+.desktop {
+  position: absolute;
+  width: 800px;
+  height: calc(480px - 9rem);
+}
+.desktop__items-container {
+  display: flex;
+  justify-content: center;
+  height: calc(480px - 9rem - 20rem - 1rem);
+}
+.desktop__item {
+  background-color: rgba(0, 3, 25, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  height: 100%;
+  width: 250px;
+}
+
 .panel {
   --toggle-animation-time: 100ms;
   position: absolute;
@@ -1190,6 +1208,13 @@ html {
   transition: opacity var(--fade-time) ease;
 }
 
+.weather__text {
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  margin: 1rem;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -1212,10 +1237,4 @@ main {
 
 form {
   display: none;
-}
-
-.desktop {
-  position: absolute;
-  width: 800px;
-  height: calc(480px - 9rem);
 }
