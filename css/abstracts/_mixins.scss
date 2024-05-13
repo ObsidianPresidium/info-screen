@@ -1,0 +1,5 @@
+@mixin shadow-around($shadow-blur, $color) {
+	text-shadow: 2px 2px $shadow-blur rgba($color, 1),
+		-2px 2px $shadow-blur rgba($color, 1), 2px -2px $shadow-blur rgba($color, 1),
+		-2px -2px $shadow-blur rgba($color, 1);
+}
