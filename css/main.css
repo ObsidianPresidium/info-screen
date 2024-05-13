@@ -1083,7 +1083,7 @@ html {
 }
 
 .panel {
-  --toggle-animation-time: $toggle-animation-time;
+  --toggle-animation-time: 100ms;
   position: absolute;
   width: calc(100% - 2rem);
   height: 9rem;

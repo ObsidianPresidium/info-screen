@@ -5,7 +5,7 @@
     $panel-blur: blur(5px);
     $toggle-animation-time: 100ms;
 
-    --toggle-animation-time: $toggle-animation-time;
+    --toggle-animation-time: #{$toggle-animation-time};
 
     position: absolute;
     width: calc(100% - $panel-padding * 2);
