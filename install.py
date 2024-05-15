@@ -7,7 +7,7 @@ service_dict = {
 }
 browser_autostart = """
 [autostart]
-1 = chromium-browser --start-maximized --start-fullscreen 127.0.0.1:8080"""
+1 = chromium-browser --start-maximized --start-fullscreen 127.0.0.1:8080/index-preprocessed.html"""
 
 with open("info-screen.service", "r") as f:
     lines = f.read()
