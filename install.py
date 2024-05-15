@@ -23,8 +23,8 @@ os.system("sudo mv info-screen.service.new /etc/systemd/system/info-screen.servi
 os.system("sudo systemctl enable info-screen.service")
 
 print("Creating autostart entry for web interface")
-with open(f"{os.getenv('HOME')}/.config/wayfire.ini", "ra") as f:
-    if f.read()[-1] != "\n":
+with open(f"{os.getenv('HOME')}/.config/wayfire.ini", "a+") as f:
+    if f.read()[-1:] != "\n":
         f.write("\n")
     f.write(browser_autostart)
 
