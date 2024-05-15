@@ -1,11 +1,5 @@
 .panel {
-    $panel-padding: 1rem;
-    $panel-height: 9rem;
-    $panel-color: rgba($color-background, 0.4);
-    $panel-blur: blur(5px);
-    $toggle-animation-time: 100ms;
-
-    --toggle-animation-time: $toggle-animation-time;
+    --toggle-animation-time: #{$toggle-animation-time};
 
     position: absolute;
     width: calc(100% - $panel-padding * 2);
@@ -34,6 +28,7 @@
         right: 0;
         bottom: $panel-height;
         position: absolute;
+        z-index: 2;
 
         // TODO: figure out why blur does not work on animated elements
         &--on {

@@ -3,9 +3,11 @@
     z-index: 1;
     &__text {
         font-family: "Inter", sans-serif;
-        font-weight: 900;
-        font-size: 10rem;
+        font-weight: 200;
+        font-size: 20rem;
+        @include shadow-around(5px, $color-background);
         color: white;
+        text-align: center;
         
     }
 }
