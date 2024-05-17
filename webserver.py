@@ -27,6 +27,7 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         f = self.send_head()
+        self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
         if f:
             try:
                 shutil.copyfileobj(f, self.wfile)

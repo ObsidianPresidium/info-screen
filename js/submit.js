@@ -15,5 +15,10 @@ const submit = {
     gitPull: function() {
         submit.setAction("git-pull");
         submit.post();
+    },
+
+    reboot: function() {
+        submit.setAction("reboot");
+        submit.post();
     }
 }

@@ -1167,6 +1167,9 @@ html {
   color: white;
   margin-top: auto;
 }
+.panel__settings .btn {
+  margin-bottom: 1rem;
+}
 
 @keyframes toggle-panel-on {
   0% {

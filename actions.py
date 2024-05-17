@@ -9,6 +9,8 @@ print(f"{is_dev_env=}")
 def match_action(rfile):
     if rfile == "action=git-pull":
         git_pull()
+    elif rfile == "action=reboot":
+        reboot()
 
 def git_pull():
     if is_dev_env:
@@ -17,6 +19,12 @@ def git_pull():
     else:
         os.system("git pull origin master")
     preprocess()
+
+def reboot():
+    if is_dev_env:
+        print("Goodbye, pretending to reboot :)")
+    else:
+        os.system("sudo reboot")
 
 def restart_webserver():
     print("Restarting Python process")
