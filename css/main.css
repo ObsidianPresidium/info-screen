@@ -1064,11 +1064,14 @@ html {
 .btn--lavanda--pressed {
   background-image: linear-gradient(to right, #1f4c9c, #441a4a);
 }
-.btn--icon {
+.btn--icon-font {
   color: white;
   font-size: 5rem !important;
   font-weight: 1000 !important;
   padding: 1rem 1.5rem !important;
+}
+.btn--icon-svg {
+  padding: 1.5rem !important;
 }
 
 .clock {
@@ -1169,6 +1172,13 @@ html {
 }
 .panel__settings .btn {
   margin-bottom: 1rem;
+}
+.panel__settings-power-options {
+  display: flex;
+}
+.panel__settings-power-options svg {
+  stroke: #000319;
+  width: 5.5rem;
 }
 
 @keyframes toggle-panel-on {

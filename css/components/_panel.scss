@@ -77,6 +77,15 @@
         .btn {
             margin-bottom: 1rem;
         }
+
+        &-power-options {
+            display: flex;
+
+            svg {
+                stroke: $color-background;
+                width: 7rem - $icon-button-padding;
+            }
+        }
     }
 }
 

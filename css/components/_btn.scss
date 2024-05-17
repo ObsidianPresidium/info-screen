@@ -75,10 +75,14 @@
         background-image: linear-gradient(to right, darken($lavanda-blue, 10%), darken($lavanda-pink, 50%));
     }
 
-    &--icon {
+    &--icon-font {
         color: white;
         font-size: 5rem !important;
         font-weight: 1000 !important;
         padding: 1rem 1.5rem !important;
+    }
+
+    &--icon-svg {
+        padding: $icon-button-padding !important;
     }
 }

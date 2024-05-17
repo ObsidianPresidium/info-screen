@@ -18,16 +18,14 @@ def check_if_host_changed():
     return ".py" in files_changed
 
 
-preprocess_dict = {
-    "$INFO-SCREEN-GIT-COMMITS": get_output("git rev-list --count HEAD"),
-    "$INFO-SCREEN-GIT-COMMIT-HASH": get_output("git rev-parse --short HEAD"),
-    "$INFO-SCREEN-DEV-ENV-MESSAGE": "(Development Environment)" if is_dev_env else "",
-    "$INFO-SCREEN-HOST-CHANGED": check_if_host_changed
-}
-preprocess_files = ["index.html"]
-
-
 def preprocess():
+    preprocess_dict = {
+        "$INFO-SCREEN-GIT-COMMITS": get_output("git rev-list --count HEAD"),
+        "$INFO-SCREEN-GIT-COMMIT-HASH": get_output("git rev-parse --short HEAD"),
+        "$INFO-SCREEN-DEV-ENV-MESSAGE": "(Development Environment)" if is_dev_env else "",
+        "$INFO-SCREEN-HOST-CHANGED": check_if_host_changed
+    }
+    preprocess_files = ["index.html"]
     print("Preprocessing files...")
     for file in preprocess_files:
         # Make preprocessed name
