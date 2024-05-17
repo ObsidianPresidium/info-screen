@@ -32,14 +32,20 @@
             <h2>Settings</h2>
             <hr>
             <a href="javascript:submit.gitPull()" class="btn btn--red">Update</a>
-            <p>version $INFO-SCREEN-GIT-COMMITS ($INFO-SCREEN-GIT-COMMIT-HASH)</p>
+            <p>version $INFO-SCREEN-GIT-COMMITS ($INFO-SCREEN-GIT-COMMIT-HASH) $INFO-SCREEN-DEV-ENV-MESSAGE</p>
         </div>
     </main>
     
     
-    <form id="form" action="index.html" method="post">
+    <form id="form" action="index-preprocessed.html" method="post">
         <input type="text" name="action" id="form__action" value="none">
     </form>
+
+    <script>  // Preprocessing data
+        window.data = {
+            hostChanged: "$INFO-SCREEN-HOST-CHANGED"
+        }
+    </script>
     <script src="js/submit.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/wallpaper.js"></script>

@@ -178,3 +178,5 @@ pyrightconfig.json
 .vscode/
 
 *-preprocessed.*
+
+runtime-data/
