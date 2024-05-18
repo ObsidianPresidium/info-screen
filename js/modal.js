@@ -1,5 +1,6 @@
 let modal = {
     el: {
+        confirmPoweroff: document.querySelector(".modal__confirm-poweroff"),
         rebootRequired: document.querySelector(".modal__reboot-required")
     },
 
