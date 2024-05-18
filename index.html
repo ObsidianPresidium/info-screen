@@ -16,7 +16,8 @@
             </div>
             <div class="desktop__items-container">
                 <div class="desktop__item weather">
-                    <p class="weather__text">Update test!</p>
+                    <h2 class="weather__temp">Fetching weather...</h2>
+                    <p class="weather__text"></p>
                 </div>
             </div>
         </div>
@@ -83,7 +84,8 @@
 
     <script>  // Preprocessing data
         window.data = {
-            hostChanged: "$INFO-SCREEN-HOST-CHANGED"
+            hostChanged: "$INFO-SCREEN-HOST-CHANGED",
+            owmKey: "$INFO-SCREEN-OWM-KEY"
         }
     </script>
     <script src="js/submit.js"></script>
@@ -92,6 +94,7 @@
     <script src="js/panel.js"></script>
     <script src="js/button.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/weather.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

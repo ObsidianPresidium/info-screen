@@ -18,12 +18,18 @@ def check_if_host_changed():
     return ".py" in files_changed
 
 
+def get_owm_key():
+    with open("runtime-data/openweathermap.key", "r", encoding="utf-8") as f:
+        return f.read().rstrip()
+
+
 def preprocess():
     preprocess_dict = {
         "$INFO-SCREEN-GIT-COMMITS": get_output("git rev-list --count HEAD"),
         "$INFO-SCREEN-GIT-COMMIT-HASH": get_output("git rev-parse --short HEAD"),
         "$INFO-SCREEN-DEV-ENV-MESSAGE": "(Development Environment)" if is_dev_env else "",
-        "$INFO-SCREEN-HOST-CHANGED": check_if_host_changed
+        "$INFO-SCREEN-HOST-CHANGED": check_if_host_changed,
+        "$INFO-SCREEN-OWM-KEY": get_owm_key
     }
     preprocess_files = ["index.html"]
     print("Preprocessing files...")

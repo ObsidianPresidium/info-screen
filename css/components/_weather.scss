@@ -1,8 +1,15 @@
 .weather {
+    &__temp {
+        color: white;
+        text-align: center;
+        font-size: 5rem;
+        margin: 1rem;
+    }
     &__text {
         color: white;
         text-align: center;
-        font-size: 3rem;
+        font-size: 2rem;
         margin: 1rem;
+        text-transform: capitalize;
     }
 }
