@@ -11,6 +11,8 @@ def match_action(rfile):
         git_pull()
     elif rfile == "action=reboot":
         reboot()
+    elif rfile == "action=poweroff":
+        poweroff()
 
 def git_pull():
     if is_dev_env:
@@ -25,6 +27,12 @@ def reboot():
         print("Goodbye, pretending to reboot :)")
     else:
         os.system("sudo reboot")
+
+def poweroff():
+    if is_dev_env:
+        print("Goodbye, pretending to power-off :)")
+    else:
+        os.system("sudo poweroff")
 
 def restart_webserver():
     print("Restarting Python process")

@@ -57,6 +57,12 @@ html {
   font-size: 10px;
 }
 
+svg {
+  width: 3rem;
+  height: 3rem;
+  stroke: #000319;
+}
+
 @font-face {
   font-family: "linea-basic-10";
   src: url("/assets/font/linea-basic-10.woff");
@@ -1001,6 +1007,17 @@ html {
   content: "\e054";
 }
 
+.u-stack-horizontally {
+  display: flex;
+}
+.u-stack-horizontally *:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.u-float-right {
+  float: right;
+}
+
 .btn {
   /* &::after {
       content: "";
@@ -1071,7 +1088,9 @@ html {
   padding: 1rem 1.5rem !important;
 }
 .btn--icon-svg {
-  padding: 1.5rem !important;
+  padding: 2rem 2rem !important;
+  width: 3rem;
+  height: 3rem;
 }
 
 .clock {
@@ -1105,6 +1124,78 @@ html {
   width: 250px;
 }
 
+.modal {
+  --modal-animation-time: 300ms;
+  position: fixed;
+  display: flex;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 3, 25, 0.4);
+}
+.modal--hidden {
+  display: none !important;
+}
+.modal__content {
+  background-color: #000319;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 480px;
+}
+.modal__content h2 {
+  font-weight: 600;
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+.modal__content p {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+.modal__content--in {
+  animation: modal__content-in 300ms cubic-bezier(0.17, 0.67, 0.72, 1.5);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.modal__content--out {
+  animation: modal__content-in 300ms cubic-bezier(0.17, 0.67, 0.72, 1.5);
+  animation-iteration-count: 1;
+  animation-direction: reverse;
+  animation-fill-mode: backwards;
+}
+.modal--in {
+  animation: modal-in 300ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.modal--out {
+  animation: modal-in 300ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-direction: reverse;
+}
+
+@keyframes modal-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes modal__content-in {
+  0% {
+    transform: translateY(40rem);
+  }
+  100% {
+    transform: none;
+  }
+}
 .panel {
   --toggle-animation-time: 100ms;
   position: absolute;
@@ -1178,7 +1269,14 @@ html {
 }
 .panel__settings-power-options svg {
   stroke: #000319;
-  width: 5.5rem;
+  width: 3rem;
+}
+.panel__settings-power-options .btn {
+  height: 3rem;
+  width: 3rem;
+}
+.panel__settings-power-options .btn:not(:last-child) {
+  margin-right: 1rem;
 }
 
 @keyframes toggle-panel-on {

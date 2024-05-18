@@ -1,0 +1,11 @@
+.u-stack-horizontally {
+    display: flex;
+
+    *:not(:last-child) {
+        margin-right: 1rem;
+    }
+}
+
+.u-float-right {
+    float: right;
+}

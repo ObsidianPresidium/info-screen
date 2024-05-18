@@ -83,7 +83,16 @@
 
             svg {
                 stroke: $color-background;
-                width: 7rem - $icon-button-padding;
+                width: 6rem - $icon-button-padding * 2;
+            }
+
+            .btn {
+                height: 3rem;
+                width: 3rem;
+                
+                &:not(:last-child) {
+                    margin-right: 1rem;
+                }
             }
         }
     }

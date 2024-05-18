@@ -1,2 +1,9 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+// Icons
+svg {
+    width: 6rem - $icon-button-padding * 2;
+    height: 6rem - $icon-button-padding * 2;
+    stroke: $color-background;
+}

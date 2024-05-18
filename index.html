@@ -38,7 +38,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
                     </svg>
                 </a>
-                <a href="javascript:submit.powerOff()" class="btn btn--red btn--icon-svg">
+                <a href="javascript:submit.setActionPost('poweroff')" class="btn btn--red btn--icon-svg">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9" />
                     </svg>                      
@@ -46,6 +46,22 @@
             </div>
             
             <p>version $INFO-SCREEN-GIT-COMMITS ($INFO-SCREEN-GIT-COMMIT-HASH) $INFO-SCREEN-DEV-ENV-MESSAGE</p>
+        </div>
+
+        <div class="modal modal--hidden modal__reboot-required">
+            <div class="modal__content">
+                <h2>Reboot Required</h2>
+                <p>You have updated the info screen frontend but a change to the backend was also detected in this update. The Raspberry Pi needs to be rebooted in order for these changes to come into effect.</p>
+                <p>Continuing to use the info screen may result in bugs until reboot.</p>
+                <div class="u-stack-horizontally u-float-right">
+                    <a href="javascript:submit.reboot()" class="btn btn--lavanda btn--icon-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                        </svg>
+                    </a>
+                    <a href="javascript:modal.hide(modal.el.rebootRequired)" class="btn btn--red">Close</a>
+                </div>
+            </div>
         </div>
     </main>
     
@@ -64,5 +80,7 @@
     <script src="js/wallpaper.js"></script>
     <script src="js/panel.js"></script>
     <script src="js/button.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

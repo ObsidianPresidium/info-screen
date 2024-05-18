@@ -20,5 +20,10 @@ const submit = {
     reboot: function() {
         submit.setAction("reboot");
         submit.post();
+    },
+
+    setActionPost: function(action) {
+        submit.setAction(action);
+        submit.post();
     }
 }
