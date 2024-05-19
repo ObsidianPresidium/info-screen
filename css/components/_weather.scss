@@ -12,4 +12,12 @@
         margin: 1rem;
         text-transform: capitalize;
     }
+    &__icon {
+        background-image: linear-gradient(to right, $lavanda-blue, $lavanda-pink);
+        background-clip: text;
+        font-size: 6rem;
+        text-align: center;
+        color: transparent;
+        font-family: "linea-weather-10";
+    }
 }

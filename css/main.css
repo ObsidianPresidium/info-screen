@@ -1340,6 +1340,15 @@ svg {
   margin: 1rem;
   text-transform: capitalize;
 }
+.weather__icon {
+  background-image: linear-gradient(to right, #2861c6, #ce8cd7);
+  -webkit-background-clip: text;
+          background-clip: text;
+  font-size: 6rem;
+  text-align: center;
+  color: transparent;
+  font-family: "linea-weather-10";
+}
 
 body {
   display: flex;
