@@ -54,6 +54,10 @@
         background-color: $dark-color-primary;
     }
 
+    &--red--pressed {
+        background-color: darken($dark-color-primary, 20%);
+    }
+
     &--large-border-radius {
         border-radius: $large-border-radius;
         &::after {

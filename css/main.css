@@ -1064,6 +1064,9 @@ svg {
 .btn--red::after {
   background-color: #fd015b;
 }
+.btn--red--pressed {
+  background-color: #970136;
+}
 .btn--large-border-radius {
   border-radius: 10rem;
 }
@@ -1116,14 +1119,49 @@ svg {
   justify-content: center;
   height: calc(480px - 9rem - 20rem - 1rem);
 }
-.desktop__item {
+
+.desktop-item {
+  --toggle-animation-time: 100ms;
   background-color: rgba(0, 3, 25, 0.4);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   height: 100%;
   width: 250px;
 }
+.desktop-item--hidden {
+  display: none !important;
+}
+.desktop-item--on {
+  animation: toggle-desktop-item-on 100ms ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.desktop-item--off {
+  animation: toggle-desktop-item-off 100ms ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
 
+@keyframes toggle-desktop-item-on {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes toggle-desktop-item-off {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+}
 .modal {
   --modal-animation-time: 300ms;
   position: fixed;
@@ -1245,6 +1283,7 @@ svg {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  overflow-y: scroll;
 }
 .panel__settings h2 {
   font-weight: 600;
@@ -1263,6 +1302,8 @@ svg {
 }
 .panel__settings .btn {
   margin-bottom: 1rem;
+  width: calc(100% - 8rem);
+  text-align: center;
 }
 .panel__settings-power-options {
   display: flex;
@@ -1277,6 +1318,12 @@ svg {
 }
 .panel__settings-power-options .btn:not(:last-child) {
   margin-right: 1rem;
+}
+.panel .leftbox .btn {
+  padding-left: 1rem;
+}
+.panel .leftbox .btn img {
+  width: 2.5rem;
 }
 
 @keyframes toggle-panel-on {

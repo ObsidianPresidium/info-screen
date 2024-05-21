@@ -1,0 +1,48 @@
+.desktop-item {
+    --toggle-animation-time: #{$toggle-animation-time};
+    background-color: $panel-color;
+    backdrop-filter: $panel-blur;
+    height: 100%;
+    width: 250px;
+
+    &--hidden {
+        display: none !important;
+    }
+
+    // TODO: figure out why blur does not work on animated elements
+    &--on {
+        animation: toggle-desktop-item-on $toggle-animation-time ease-out;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+
+    &--off {
+        animation: toggle-desktop-item-off $toggle-animation-time ease-out;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes toggle-desktop-item-on {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes toggle-desktop-item-off {
+    0% {
+        opacity: 1;
+        transform: none;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+}

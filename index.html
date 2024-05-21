@@ -15,7 +15,7 @@
                 <p class="clock__text">9:41</p>
             </div>
             <div class="desktop__items-container">
-                <div class="desktop__item weather">
+                <div class="desktop-item weather">
                     <h2 class="weather__temp">Fetching weather...</h2>
                     <p class="weather__icon">&#xe038;</p>
                     <p class="weather__text"></p>
@@ -24,7 +24,10 @@
         </div>
         <footer class="panel">
             <div class="leftbox">
-                <a href="javascript:wallpaper.changeWallpaperNow()" class="btn btn--red">Next Wallpaper</a>
+                <a href="javascript:weatherDesktopItem.toggle()" id="button__weather" class="btn btn--red">
+                    <img src="assets/img/weather-icon.png" alt="">
+                    Weather
+                </a>
             </div>
             <div class="rightbox">
                 <a href="javascript:panel.toggle(panel.panels.settings, '#button__settings')" id="button__settings" class="btn btn--lavanda btn--icon-font icon-basic-settings"></a>
@@ -33,6 +36,7 @@
         <div class="panel__secondary panel--hidden panel__settings">
             <h2>Settings</h2>
             <hr>
+            <a href="javascript:wallpaper.changeWallpaperNow()" class="btn btn--red">Next Wallpaper</a>
             <a href="javascript:submit.gitPull()" class="btn btn--red">Update</a>
             <div class="panel__settings-power-options">
                 <a href="javascript:submit.reboot()" class="btn btn--red btn--icon-svg">
@@ -96,6 +100,7 @@
     <script src="js/button.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/desktop-item.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
