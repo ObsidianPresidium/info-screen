@@ -1018,6 +1018,12 @@ svg {
   float: right;
 }
 
+.u-center-both {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn {
   /* &::after {
       content: "";
@@ -1109,6 +1115,17 @@ svg {
   text-align: center;
 }
 
+.countdown {
+  color: white;
+  text-align: center;
+}
+.countdown__days {
+  font-size: 4rem;
+}
+.countdown__hours, .countdown__minutes, .countdown__seconds {
+  font-size: 3rem;
+}
+
 .desktop {
   position: absolute;
   width: 800px;
@@ -1127,6 +1144,9 @@ svg {
           backdrop-filter: blur(5px);
   height: 100%;
   width: 250px;
+}
+.desktop-item:not(:last-child) {
+  margin-right: 1rem;
 }
 .desktop-item--hidden {
   display: none !important;

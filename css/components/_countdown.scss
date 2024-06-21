@@ -1,0 +1,12 @@
+.countdown {
+    color: white;
+    text-align: center;
+    &__days {
+        font-size: 4rem;
+    }
+    &__hours,
+    &__minutes,
+    &__seconds {
+        font-size: 3rem;
+    }
+}

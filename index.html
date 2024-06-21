@@ -20,6 +20,24 @@
                     <p class="weather__icon">&#xe038;</p>
                     <p class="weather__text"></p>
                 </div>
+                <div class="desktop-item desktop-item--hidden countdown">
+                    <div class="u-center-both" style="height: 100%">
+                        <p>
+                            <span class="countdown__days">
+                                0 days
+                            </span><br>
+                            <span class="countdown__hours">
+                                0 hours
+                            </span><br>
+                            <span class="countdown__minutes">
+                                0 minutes
+                            </span><br>
+                            <span class="countdown__seconds">
+                                0 seconds
+                            </span>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
         <footer class="panel">
@@ -27,6 +45,9 @@
                 <a href="javascript:weatherDesktopItem.toggle()" id="button__weather" class="btn btn--red">
                     <img src="assets/img/weather-icon.png" alt="">
                     Weather
+                </a>
+                <a href="javascript:countdownDesktopItem.toggle()" id="button__countdown" class="btn btn--red">
+                    Countdown
                 </a>
             </div>
             <div class="rightbox">
@@ -101,6 +122,7 @@
     <script src="js/modal.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/desktop-item.js"></script>
+    <script src="js/countdown.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
