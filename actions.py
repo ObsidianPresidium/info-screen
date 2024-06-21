@@ -15,10 +15,7 @@ def match_action(rfile):
         poweroff()
 
 def git_pull():
-    if is_dev_env:
-        print("Git pull called, 'simulating' wait time")
-        time.sleep(2)
-    else:
+    if not is_dev_env:
         os.system("git pull origin master")
     preprocess()
 
