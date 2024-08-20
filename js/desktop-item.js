@@ -61,3 +61,4 @@ desktopItem = Object.assign(desktopItem, {
 
 const weatherDesktopItem = new desktopItem.desktopItem(".weather", ["#button__weather"], true);
 const countdownDesktopItem = new desktopItem.desktopItem(".countdown", ["#button__countdown"]);
+const spotifyDesktopItem = new desktopItem.desktopItem(".spotify", ["#button__spotify"]);

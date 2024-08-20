@@ -1,0 +1,45 @@
+.spotify {
+    &__cover-container {
+        background-color: $color-background;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+        width: 10rem;
+    }
+
+    &__cover {
+        width: 8rem;
+        height: 8rem;
+        fill: white;
+    }
+
+    &__title-and-cover-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__title-container {
+        margin: 1rem;
+    }
+
+    &__title {
+        color: white;
+        font-family: "Inter", sans-serif;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    &__artist {
+        color: #ddd;
+        font-family: "Inter", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 300;
+    }
+
+    &__controls-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

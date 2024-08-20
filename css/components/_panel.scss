@@ -16,7 +16,8 @@
     background-color: $panel-color;
     backdrop-filter: $panel-blur;
 
-    & > * > * {  // panel items
+    & .leftbox a,
+    & .rightbox a {
         margin: 0.5rem;
     }
 
@@ -42,6 +43,27 @@
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
         }
+    }
+
+    .leftbox-container {
+        overflow-x: scroll;
+    }
+    .leftbox {
+        .btn {
+            img {
+                width: 2.5rem;
+            }
+
+            padding-left: 1rem;
+        }
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: max-content;
+    }
+
+    .rightbox svg {
+        stroke: white;
     }
 
     // Individual panels
@@ -99,17 +121,7 @@
             }
         }
     }
-
-    .leftbox {
-        .btn {
-            img {
-                width: 2.5rem;
-            }
-
-            padding-left: 1rem;
-        }
-    }
-}
+}   
 
 @keyframes toggle-panel-on {
     0% {

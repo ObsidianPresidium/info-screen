@@ -7,7 +7,7 @@
     &:visited {
         text-transform: uppercase;
         text-decoration: none;
-        padding: 2rem 4rem;
+        padding: 2rem 2rem;
         display: inline-block;
         transition: all .2s;
         position: relative;
@@ -90,5 +90,9 @@
         padding: 2rem 2rem !important;
         width: 3rem;
         height: 3rem;
+    }
+
+    &--icon-and-text {
+        padding: 2rem !important;
     }
 }
