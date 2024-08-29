@@ -42,4 +42,13 @@
         display: flex;
         justify-content: space-evenly;
     }
+
+    &__controls__back,
+    &__controls__play,
+    &__controls__pause,
+    &__controls__forward {
+        width: 5rem;
+        height: 5rem;
+        stroke: transparent;
+    }
 }

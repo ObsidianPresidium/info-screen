@@ -1,6 +1,7 @@
 import subprocess
 import socket
 import types
+import json
 
 is_dev_env = False if socket.gethostname() == "raspberrypi" else True
 
@@ -17,6 +18,20 @@ def check_if_host_changed():
 
     return ".py" in files_changed
 
+def get_spotify(key_type):
+    with open("runtime-data/spotify.key", "r", encoding="utf-8") as f:
+        keys = json.load(f)
+    return keys[key_type]
+
+def get_spotify_client_id():
+    return get_spotify("client_id")
+
+def get_spotify_client_secret():
+    return get_spotify("client_secret")
+
+def get_spotify_refresh_token():
+    return get_spotify("refresh_token")
+
 
 def get_owm_key():
     with open("runtime-data/openweathermap.key", "r", encoding="utf-8") as f:
@@ -29,7 +44,10 @@ def preprocess():
         "$INFO-SCREEN-GIT-COMMIT-HASH": get_output("git rev-parse --short HEAD"),
         "$INFO-SCREEN-DEV-ENV-MESSAGE": "(Development Environment)" if is_dev_env else "",
         "$INFO-SCREEN-HOST-CHANGED": check_if_host_changed,
-        "$INFO-SCREEN-OWM-KEY": get_owm_key
+        "$INFO-SCREEN-OWM-KEY": get_owm_key,
+        "$INFO-SCREEN-SPOTIFY-CLIENT-ID": get_spotify_client_id,
+        "$INFO-SCREEN-SPOTIFY-CLIENT-SECRET": get_spotify_client_secret,
+        "$INFO-SCREEN-SPOTIFY-REFRESH-TOKEN": get_spotify_refresh_token
     }
     preprocess_files = ["index.html"]
     print("Preprocessing files...")

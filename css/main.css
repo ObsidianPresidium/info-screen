@@ -1423,6 +1423,11 @@ svg {
   display: flex;
   justify-content: space-evenly;
 }
+.spotify__controls__back, .spotify__controls__play, .spotify__controls__pause, .spotify__controls__forward {
+  width: 5rem;
+  height: 5rem;
+  stroke: transparent;
+}
 
 .wallpaper {
   --fade-time: 1s;
