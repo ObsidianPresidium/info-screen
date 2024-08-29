@@ -30,7 +30,11 @@ def get_spotify_client_secret():
     return get_spotify("client_secret")
 
 def get_spotify_refresh_token():
-    return get_spotify("refresh_token")
+    refresh_token = get_spotify("refresh_token")
+    refresh_token = refresh_token.replace("{", "\\{")
+    refresh_token = refresh_token.replace("}", "\\}")
+    refresh_token = refresh_token.replace("\"", "\\\"")
+    return refresh_token
 
 
 def get_owm_key():

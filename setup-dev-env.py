@@ -16,7 +16,7 @@ print("Dumping API keys")
 if not os.path.exists("runtime-data"):
     os.mkdir("runtime-data")
 with open("runtime-data/openweathermap.key", "w", encoding="utf-8") as f:
-    f.write(owm_key)
+    f.write(owm_key.strip())
 with open("runtime-data/spotify.key", "w", encoding="utf-8") as f:
     json.dump(spotify_dict, f)
 
