@@ -2,7 +2,11 @@ let spotify = {
     el: {
         artist: document.querySelector(".spotify__artist"),
         cover: document.querySelector(".spotify__cover"),
-        title: document.querySelector(".spotify__title")
+        title: document.querySelector(".spotify__title"),
+        progressBar: document.querySelector(".spotify__progress-bar"),
+        progressBarBorder: document.querySelector(".spotify__progress-bar-border"),
+        timePlayed: document.querySelector(".spotify__time-played"),
+        timeTotal: document.querySelector(".spotify__time-total")
     },
     endpoints: {
         nowPlaying: "https://api.spotify.com/v1/me/player/currently-playing",
@@ -30,6 +34,31 @@ spotify = Object.assign(spotify, {
             spotify.el.cover.style.width = "10rem";
         }
     },
+    setProgress: function(timePlayed, timeTotal) {
+        targetWidth = Number(getComputedStyle(spotify.el.progressBarBorder).width.replace("px", ""));
+        progress = (timePlayed / timeTotal) * targetWidth;
+        spotify.el.progressBar.style.width = `${progress}px`;
+    },
+    setTime: function(timePlayed, timeTotal) {
+        function precedingZero(inputNumber) {
+            return (inputNumber < 10) ? `0${inputNumber}` : inputNumber.toString();
+        }
+        let secondsPlayed = 0;
+        let minutesPlayed = 0;
+        let secondsTotal = 0;
+        let minutesTotal = 0;
+
+        secondsPlayed = Math.floor(timePlayed / 1000);
+        minutesPlayed = Math.floor(secondsPlayed / 60);
+        secondsPlayed = secondsPlayed % 60;
+
+        secondsTotal = Math.floor(timeTotal / 1000);
+        minutesTotal = Math.floor(secondsTotal / 60);
+        secondsTotal = secondsTotal % 60;
+
+        spotify.el.timePlayed.innerHTML = `${minutesPlayed}:${precedingZero(secondsPlayed)}`;
+        spotify.el.timeTotal.innerHTML = `${minutesTotal}:${precedingZero(secondsTotal)}`;
+    },
     getAccessToken: async function() {
         const basic = btoa(`${spotify.keys.clientId}:${spotify.keys.clientSecret}`);
 
@@ -56,10 +85,10 @@ spotify = Object.assign(spotify, {
         spotify.setCover("none");
         spotify.el.artist.innerHTML = "";
     },
-    getNowPlaying: function() {
-        const { accessToken } = spotify.getAccessToken();
+    getNowPlaying: async function() {
+        const { access_token } = await spotify.getAccessToken();
 
-        const response = fetch(spotify.endpoints.nowPlaying, {
+        const response = await fetch(spotify.endpoints.nowPlaying, {
             headers: {
                 Authorization: `Bearer ${access_token}`,
             }
@@ -71,7 +100,7 @@ spotify = Object.assign(spotify, {
             return "Error";
         }
 
-        const song = response.json();
+        const song = await response.json();
         const albumCover = song.item.album.images[0].url;
         const artist = song.item.artists.map((artist) => artist.name).join(', ');
         const isPlaying = song.is_playing;
@@ -92,8 +121,8 @@ spotify = Object.assign(spotify, {
 });
 
 spotify = Object.assign(spotify, {
-    updateDom: function() {
-        const song = spotify.getNowPlaying();
+    updateDom: async function() {
+        const song = await spotify.getNowPlaying();
         try {
             if (song === "Not playing" || !song.isPlaying) {
                 spotify.resetEls();
@@ -109,9 +138,11 @@ spotify = Object.assign(spotify, {
         spotify.el.title.innerHTML = song.title;
         spotify.el.artist.innerHTML = song.artist;
         spotify.setCover(song.albumCover);
+        spotify.setProgress(song.timePlayed, song.timeTotal);
+        spotify.setTime(song.timePlayed, song.timeTotal);
     }
 });
 
 spotify = Object.assign(spotify, {
-    domUpdater: setInterval(spotify.updateDom, spotify.settings.updateInterval)
+    domUpdater: setInterval(spotify.updateDom, spotify.settings.updateInterval * 1000) 
 });

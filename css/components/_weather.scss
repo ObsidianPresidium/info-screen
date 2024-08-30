@@ -13,7 +13,7 @@
         text-transform: capitalize;
     }
     &__icon {
-        background-image: linear-gradient(to right, $lavanda-blue, $lavanda-pink);
+        @include lavanda-gradient();
         background-clip: text;
         font-size: 6rem;
         text-align: center;

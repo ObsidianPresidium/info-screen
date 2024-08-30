@@ -3,3 +3,7 @@
 		-2px 2px $shadow-blur rgba($color, 1), 2px -2px $shadow-blur rgba($color, 1),
 		-2px -2px $shadow-blur rgba($color, 1);
 }
+
+@mixin lavanda-gradient($saturate-amount: 0%) {
+	background-image: linear-gradient(to right, saturate($lavanda-blue, $saturate-amount), saturate($lavanda-pink, $saturate-amount));
+}

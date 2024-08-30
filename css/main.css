@@ -1386,6 +1386,9 @@ svg {
     transform: translateY(10rem);
   }
 }
+.spotify {
+  overflow: hidden;
+}
 .spotify__cover-container {
   background-color: #000319;
   display: flex;
@@ -1403,6 +1406,9 @@ svg {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 1rem;
+  height: 10rem;
+  overflow: hidden;
 }
 .spotify__title-container {
   margin: 1rem;
@@ -1412,6 +1418,7 @@ svg {
   font-family: "Inter", sans-serif;
   font-size: 2rem;
   font-weight: 500;
+  text-overflow: ellipsis;
 }
 .spotify__artist {
   color: #ddd;
@@ -1419,14 +1426,31 @@ svg {
   font-size: 1.8rem;
   font-weight: 300;
 }
-.spotify__controls-container {
-  display: flex;
-  justify-content: space-evenly;
+.spotify__progress-bar {
+  border-radius: 0.5rem;
+  width: 0px;
+  transition: width 2s;
+  height: 2rem;
+  background-image: linear-gradient(to right, #0a59e4, #dd79ea);
 }
-.spotify__controls__back, .spotify__controls__play, .spotify__controls__pause, .spotify__controls__forward {
-  width: 5rem;
-  height: 5rem;
-  stroke: transparent;
+.spotify__progress-bar-border {
+  border: #444 0.2rem solid;
+  width: auto;
+  border-radius: 0.5rem;
+}
+.spotify__progress-bar-container {
+  padding: 0 1rem;
+}
+.spotify__time {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ddd;
+}
+.spotify__time-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
 }
 
 .wallpaper {
