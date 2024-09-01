@@ -127,6 +127,7 @@ spotify = Object.assign(spotify, {
             if (song === "Not playing" || !song.isPlaying) {
                 spotify.resetEls();
                 spotify.el.title.innerHTML = "Not Playing";
+                return;
             }
         } catch (e) {
             spotify.resetEls();
